@@ -1,0 +1,25 @@
+"use client"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+
+export default function TodoManagerComplete() {
+  const [isComplete, setIsComplete] = useState(false)
+
+  const handleComplete = () => {
+    setIsComplete(true)
+  }
+
+  return (
+    <div className="p-4 text-center">
+      <h2 className="text-xl font-bold mb-4">Sistema de Reservas CIBERTEC - Completado</h2>
+      {!isComplete ? (
+        <Button onClick={handleComplete} className="bg-green-600 hover:bg-green-700">
+          Marcar Proyecto como Completado
+        </Button>
+      ) : (
+        <div className="text-green-600 font-semibold">✅ Proyecto Completado Exitosamente</div>
+      )}
+    </div>
+  )
+}
